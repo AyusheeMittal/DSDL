@@ -48,8 +48,10 @@ def download_coco2014(root, phase):
     cached_file = os.path.join(tmpdir, 'annotations_trainval2014.zip')
     if not os.path.exists(cached_file):
         print('Downloading: "{}" to {}\n'.format(urls['annotations'], cached_file))
+        print('tmpdir-',tmpdir)
         os.chdir(tmpdir)
         subprocess.Popen('wget ' + urls['annotations'], shell=True)
+        print('root-',root)
         os.chdir(root)
     annotations_data = os.path.join(data, 'annotations')
     if not os.path.exists(annotations_data):
