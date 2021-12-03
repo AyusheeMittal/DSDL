@@ -31,10 +31,8 @@ def download_coco2014(root, phase):
     cached_file = os.path.join(tmpdir, filename)
     if not os.path.exists(cached_file):
         print('Downloading: "{}" to {}\n'.format(urls[phase + '_img'], cached_file))
-        print('tmpdir-',tmpdir)
         os.chdir(tmpdir)
-        #subprocess.call('wget ' + urls[phase + '_img'], shell=True)
-        print('root-',root)
+        subprocess.call('wget ' + urls[phase + '_img'], shell=True)
         os.chdir(root)
     # extract file
     img_data = os.path.join(data, filename.split('.')[0])
@@ -49,11 +47,11 @@ def download_coco2014(root, phase):
     print('cached_file-',cached_file)
     if not os.path.exists(cached_file):
         print('Downloading: "{}" to {}\n'.format(urls['annotations'], cached_file))
-        print('tmpdir-',tmpdir)
-        os.chdir(tmpdir)
+        #os.chdir(tmpdir)
+        os.chdir('tmp/')
         subprocess.Popen('wget ' + urls['annotations'], shell=True)
-        print('root-',root)
-        os.chdir(root)
+        #os.chdir(root)
+        os.chdir('../.')
     annotations_data = os.path.join(data, 'annotations')
     if not os.path.exists(annotations_data):
         print('[dataset] Extracting tar file {file} to {path}'.format(file=cached_file, path=data))
