@@ -37,6 +37,7 @@ def download_coco2014(root, phase):
         os.chdir('../.')
     # extract file
     img_data = os.path.join(data, filename.split('.')[0])
+    print('img_data----',img_data)
     if not os.path.exists(img_data):
         print('[dataset] Extracting tar file {file} to {path}'.format(file=cached_file, path=data))
         command = 'unzip {} -d {}'.format(cached_file,data)
