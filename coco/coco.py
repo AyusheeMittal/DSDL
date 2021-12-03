@@ -33,7 +33,8 @@ def download_coco2014(root, phase):
         print('Downloading: "{}" to {}\n'.format(urls[phase + '_img'], cached_file))
         os.chdir(tmpdir)
         subprocess.call('wget ' + urls[phase + '_img'], shell=True)
-        os.chdir(root)
+        #os.chdir(root)
+        os.chdir('../.')
     # extract file
     img_data = os.path.join(data, filename.split('.')[0])
     if not os.path.exists(img_data):
