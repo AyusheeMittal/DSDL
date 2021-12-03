@@ -46,6 +46,7 @@ def download_coco2014(root, phase):
 
     # train/val images/annotations
     cached_file = os.path.join(tmpdir, 'annotations_trainval2014.zip')
+    print('cached_file-',cached_file)
     if not os.path.exists(cached_file):
         print('Downloading: "{}" to {}\n'.format(urls['annotations'], cached_file))
         print('tmpdir-',tmpdir)
