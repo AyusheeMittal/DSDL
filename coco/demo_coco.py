@@ -55,8 +55,8 @@ def main_coco():
     use_gpu = torch.cuda.is_available()
 
     train_dataset = COCO2014(args.data, phase='train',
-                             inp_name='data/coco/coco_glove_word2vec.pkl')
-    val_dataset = COCO2014(args.data, phase='val', inp_name='data/coco/coco_glove_word2vec.pkl')
+                             inp_name='/content/DSDL/coco/data/coco/coco_glove_word2vec.pkl')
+    val_dataset = COCO2014(args.data, phase='val', inp_name='/content/DSDL/coco/data/coco/coco_glove_word2vec.pkl')
     num_classes = 80
 
     # load model
