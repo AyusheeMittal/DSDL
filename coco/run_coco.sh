@@ -8,4 +8,4 @@ evaluate: evaluate model on validation set
 resume: path to checkpoint
 BLOCK
 
-CUDA_VISIBLE_DEVICES=0 python3 demo_coco.py . --image-size 448 --batch-size 32 -e --resume checkpoint/coco/coco_checkpoint.pth.tar --lambd 0.1 --beta 0.000001
+CUDA_VISIBLE_DEVICES=0 python3 demo_coco.py  --image-size 448 --batch-size 32 -e --resume checkpoint/coco/coco_checkpoint.pth.tar --lambd 0.1 --beta 0.000001
