@@ -30,7 +30,7 @@ def download_coco2014(root, phase):
         print('Downloading: "{}" to {}\n'.format(urls[phase + '_img'], cached_file))
         print('tmpdir-',tmpdir)
         os.chdir(tmpdir)
-        subprocess.call('wget ' + urls[phase + '_img'], shell=True)
+        #subprocess.call('wget ' + urls[phase + '_img'], shell=True)
         print('root-',root)
         os.chdir(root)
     # extract file
