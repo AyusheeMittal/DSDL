@@ -52,6 +52,7 @@ def download_coco2014(root, phase):
     if not os.path.exists(cached_file):
         print('Downloading: "{}" to {}\n'.format(urls['annotations'], cached_file))
         #os.chdir(tmpdir)
+        print(os.system('pwd'))
         os.chdir('tmp/')
         subprocess.Popen('wget ' + urls['annotations'], shell=True)
         #os.chdir(root)
