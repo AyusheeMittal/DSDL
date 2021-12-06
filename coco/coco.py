@@ -44,6 +44,8 @@ def download_coco2014(root, phase):
         print('[dataset] Extracting tar file {file} to {path}'.format(file=cached_file, path=data))
         command = 'unzip {} -d {}'.format(cached_file,data)
         os.system(command)
+        command2 = 'rm -r {}'.format(cached_file)
+        os.system(command2)
     print('[dataset] Done!')
 
     # train/val images/annotations
@@ -53,7 +55,7 @@ def download_coco2014(root, phase):
         print('Downloading: "{}" to {}\n'.format(urls['annotations'], cached_file))
         #os.chdir(tmpdir)
         print(os.system('pwd'))
-        os.chdir('tmp/')
+        os.chdir('datadir/tmp/')
         subprocess.Popen('wget ' + urls['annotations'], shell=True)
         #os.chdir(root)
         os.chdir('../.')
