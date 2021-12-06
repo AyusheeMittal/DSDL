@@ -59,6 +59,7 @@ def download_coco2014(root, phase):
         subprocess.Popen('wget ' + urls['annotations'], shell=True)
         #os.chdir(root)
         os.chdir('../../.')
+        
     annotations_data = os.path.join(data, 'annotations')
     print('annotations_data-',annotations_data)
     if not os.path.exists(annotations_data):
@@ -66,6 +67,9 @@ def download_coco2014(root, phase):
         print(os.system('pwd'))
         command = 'unzip {} -d {}'.format(cached_file, data)
         os.system(command)
+        command2 = 'rm -r {}'.format(cached_file)
+        os.system(command2)
+        
     print('[annotation] Done!')
 
     anno = os.path.join(data, '{}_anno.json'.format(phase))
