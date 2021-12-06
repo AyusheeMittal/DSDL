@@ -35,6 +35,8 @@ def download_coco2014(root, phase):
         subprocess.call('wget ' + urls[phase + '_img'], shell=True)
         #os.chdir(root)
         os.chdir('../.')
+    print('printing filename ---',filename)
+    print(os.system('pwd'))
     # extract file
     img_data = os.path.join(data, filename.split('.')[0])
     print('img_data----',img_data)
