@@ -42,7 +42,8 @@ def download_coco2014(root, phase):
     print('img_data----',img_data)
     if not os.path.exists(img_data):
         print('[dataset] Extracting tar file {file} to {path}'.format(file=cached_file, path=data))
-        command = 'unzip {} -d {}'.format(cached_file,data)
+        #command = 'unzip {} -d {}'.format(cached_file,data)
+        command = '1unzip {} {}'.format(cached_file,data)
         os.system(command)
     print('[dataset] Done!')
 
