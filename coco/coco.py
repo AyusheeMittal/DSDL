@@ -64,7 +64,7 @@ def download_coco2014(root, phase):
     if not os.path.exists(annotations_data):
         print('[dataset] Extracting tar file {file} to {path}'.format(file=cached_file, path=data))
         print(os.system('pwd'))
-        command = '!unzip {} -d {}'.format(cached_file, data)
+        command = 'unzip {} -d {}'.format(cached_file, data)
         os.system(command)
     print('[annotation] Done!')
 
